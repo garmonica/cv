@@ -1,0 +1,27 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Магический шар" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "magic.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    h1.visually-hidden Магический шар
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    .magic
+      .container
+        .magic__ball
+          .magic__ball-field
+            span.magic__ball-text здесь будет ответ
+        .magic__bottom
+          p.magic__description Задай шару вопрос и жми на кнопку ниже:
+          button.magic__button Задать вопрос
+          button.magic__reset(type="button") Сброс
+
+block modals

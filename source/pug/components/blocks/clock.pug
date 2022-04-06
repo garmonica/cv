@@ -1,0 +1,13 @@
+mixin clock()
+  .clock
+    .clock__face
+      .clock__time
+        span#hour --
+        span.clock__blink-colon :
+        span#minute --
+        span.clock__blink-colon :
+        span#second --
+      .clock__date-container
+        span#date --.--.20--
+        span ,&nbsp;
+        span#day --

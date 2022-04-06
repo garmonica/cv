@@ -1,0 +1,106 @@
+.qa {
+  padding: 60px 0;
+
+  &__list {
+    max-width: 945px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    border: 1px solid $color-indigo;
+    border-radius: 8px;
+  }
+
+  &__item {
+    border-bottom: 1px solid $color-indigo;
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &__item.is-active {
+    svg {
+      transform: scaleY(-1);
+    }
+  }
+
+  &__question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 30px;
+
+    font-weight: 800;
+    color: $color-indigo;
+
+    text-align: left;
+    border: none;
+    background: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: color $trans-default;
+
+    @include vp-767 {
+      padding: 20px;
+    }
+
+    &:hover {
+      color: $color-violet;
+    }
+
+    span {
+      position: relative;
+    }
+
+    span::after {
+      content: "";
+      position: absolute;
+      left: -37px;
+      top: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: $color-violet;
+      opacity: 0;
+
+      @include vp-767 {
+        left: -27px;
+      }
+    }
+
+    &:hover span::after {
+      opacity: 1;
+    }
+
+    svg {
+      margin-left: 5px;
+      flex-shrink: 0;
+      transform: scaleY(1);
+      transition: transform $trans-default;
+    }
+  }
+
+  &__answer p {
+    margin: 0;
+    padding: 0 30px 30px;
+
+    @include vp-767 {
+      padding: 0 20px 20px;
+    }
+  }
+
+  &__certificate {
+    display: block;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 14px;
+    color: $color-indigo;
+    text-decoration: underline;
+    transition: opacity $trans-default;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

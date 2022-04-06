@@ -1,0 +1,125 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+
+  background-color: $color-indigo;
+
+  @include vp-767 {
+    padding: 12px 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 6px;
+    background-color: $color-orange;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    @include vp-767 {
+      align-items: flex-start;
+    }
+  }
+
+  &__logo {
+    color: $color-default-white;
+
+    svg {
+      transition: fill $trans-default;
+    }
+
+    &:hover svg {
+      fill: $color-yellow;
+    }
+
+    &--inactive {
+      opacity: 0.2;
+      pointer-events: none;
+
+      &:hover svg {
+        fill: $color-white;
+      }
+    }
+  }
+}
+
+@include vp-767 {
+  .main-nav {
+    .main-nav__list {
+      display: none;
+    }
+  }
+
+  .main-nav__toggle {
+    display: block;
+    position: relative;
+    padding: 5px;
+
+    width: 36px;
+    height: 36px;
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .main-nav__toggle span,
+  .main-nav__toggle span::before,
+  .main-nav__toggle span::after {
+    display: block;
+    position: absolute;
+
+    width: 26px;
+    height: 2px;
+
+    background-color: $color-white;
+
+    transition-duration: 0.25s;
+  }
+
+  .main-nav__toggle span::before {
+    content: "";
+    left: 0;
+    top: -8px;
+  }
+
+  .main-nav__toggle span::after {
+    content: "";
+    left: 0;
+    top: 8px;
+  }
+
+  .header--opened {
+    height: 100vh;
+    overflow-y: auto;
+
+    .main-nav__list {
+      display: block;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    .main-nav__toggle span {
+      transform: rotate(45deg);
+    }
+
+    .main-nav__toggle span::before {
+      top: 0;
+      transform: rotate(0);
+    }
+
+    .main-nav__toggle span::after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+  }
+}

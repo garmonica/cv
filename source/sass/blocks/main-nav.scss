@@ -1,0 +1,97 @@
+.main-nav {
+  // align-self: center;
+  font-size: 16px;
+  flex-grow: 1;
+  text-transform: uppercase;
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-left: -20px;
+    padding: 0;
+
+    list-style: none;
+
+    @include vp-767 {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__link,
+  &__sublink {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-weight: 600;
+    color: $color-white;
+    transition: $trans-default;
+    cursor: pointer;
+
+    &[href]:hover {
+      color: $color-yellow;
+    }
+
+    &.is-active {
+      opacity: 0.6;
+      cursor: default;
+    }
+
+    svg {
+      margin-top: -2px;
+      margin-left: 10px;
+    }
+  }
+
+  &__link {
+    @include vp-1023 {
+      padding-right: 12px;
+    }
+
+    @include vp-767 {
+      margin: 0 -16px 0 0;
+      padding-left: 28px;
+    }
+  }
+
+  &__toggle {
+    display: none;
+
+    @include vp-767 {
+      display: block;
+    }
+  }
+
+  &__sublist {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    background-color: $color-indigo;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity $trans-default;
+    z-index: 110;
+  }
+
+  &__sublink {
+    display: block;
+    padding: 10px 20px 10px 20px;
+  }
+
+  &__item:hover &__sublist {
+    opacity: 1;
+
+    width: auto;
+    height: auto;
+
+    clip: auto;
+    clip-path: none;
+  }
+}

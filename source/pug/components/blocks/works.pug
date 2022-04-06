@@ -1,0 +1,172 @@
+mixin works()
+  -
+    const images = [
+      {
+        slide: 1,
+        alt: "Вёрстка евробуклета, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 2,
+        width: 800,
+        alt: "Вёрстка приглашения, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 3,
+        alt: "Вёрстка приглашения, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 4,
+        width: 370,
+        alt: "Вёрстка карманного календаря, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 5,
+        alt: "Вёрстка календаря, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 6,
+        width: 400,
+        alt: "Вёрстка визитки, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 7,
+        width: 400,
+        alt: "Вёрстка визитки, CorelDRAW",
+        shadow: true
+      },
+      {
+        slide: 8,
+        width: 800,
+        alt: "Отрисовка логотипа в векторе, CorelDRAW",
+      },
+      {
+        slide: 9,
+        alt: "Обработка фотографии (замена фона), Adobe Photoshop",
+      },
+      {
+        slide: 10,
+        alt: "Обработка фотографии (удаление человека с фотографии), Adobe Photoshop",
+      },
+      {
+        slide: 11,
+        alt: "Обработка фотографии, Adobe Photoshop",
+      },
+      {
+        slide: 12,
+        alt: "Обработка фотографии, Adobe Photoshop",
+      },
+      {
+        slide: 13,
+        alt: "Иллюстрация в векторе, CorelDRAW",
+      },
+      {
+        slide: 14,
+        alt: "Иллюстрация в векторе, CorelDRAW",
+      },
+      {
+        slide: 15,
+        alt: "Иллюстрация в векторе, Adobe Illustrator",
+      },
+      {
+        slide: 16,
+        width: 800,
+        alt: "Иллюстрация в векторе, CorelDRAW",
+      },
+      {
+        slide: 17,
+        width: 760,
+        alt: "Растровый рисунок, программа Sai",
+      },
+      {
+        slide: 18,
+        alt: "Растровый рисунок, программа Sai",
+      },
+      {
+        slide: 19,
+        alt: "Рисунок карандашом",
+      },
+      {
+        slide: 20,
+        alt: "Рисунок акварелью",
+      },
+    ]
+  -
+    const sites = [
+      {
+        href: "https://garmonica.github.io/jewellery/main.html",
+        img: "1-jewelry",
+        alt: "Сайт украшений CH Jewelry",
+      },
+      {
+        href: "https://garmonica.github.io/smart_device/",
+        img: "2-smart-device",
+        alt: "Сайт Smart Device",
+      },
+      {
+        href: "https://garmonica.github.io/bicycles/",
+        img: "3-moon",
+        alt: "Сайт магазин велосипедов Moon",
+      },
+      {
+        href: "https://garmonica.github.io/Way/",
+        img: "4-way",
+        alt: "Сайт путешествий Way",
+      },
+      {
+        href: "https://garmonica.github.io/pognali/",
+        img: "5-pognali",
+        alt: "Сайт для путешествий Погнали",
+      },
+      {
+        href: "https://garmonica.github.io/Sedona/",
+        img: "6-sedona",
+        alt: "Сайт Седона",
+      },
+      {
+        href: "https://garmonica.github.io/device/",
+        img: "7-device",
+        alt: "Сайт Device",
+      },
+      {
+        href: "https://garmonica.github.io/gllacy/",
+        img: "8-gllacy",
+        alt: "Сайт магазин мороженого Gllacy",
+      },
+      //- {
+      //-   href: "https://garmonica.github.io/technomart/",
+      //-   img: "9-technomart",
+      //-   alt: "Сайт Техномарт",
+      //- },
+    ]
+  .works#works
+    .container
+      .works__wrapper
+        h2.works__heading.heading.visually-hidden Работы
+        p.works__description Некоторые работы по&nbsp;вёрстке и&nbsp;обработке изображений, сделанные за&nbsp;время работы в&nbsp;Копицентре, а&nbsp;также рисунки и&nbsp;иллюстрации, созданные в&nbsp;свободное от&nbsp;работы время:
+
+        .works__swiper.swiper
+          ul.works__swiper-wrapper.swiper-wrapper
+            each img in images
+              li.works__swiper-slide.swiper-slide(class=img.shadow ? 'works__swiper-slide--shadow': '')
+                if (img.width)
+                  +img("slides", "slide-"+img.slide, "jpg", img.width, "", img.alt)
+                else
+                  +img("slides", "slide-"+img.slide, "jpg", "", "", img.alt)
+                p= img.alt
+          .works__swiper-pagination.swiper-pagination
+          .works__swiper-button-prev.swiper-button-prev
+          .works__swiper-button-next.swiper-button-next
+
+        p.works__description HTML-вёрстка учебных проектов от HTML Academy:
+        .works__web
+          ul.works__web-list
+            each site in sites
+              li.works__web-item
+                a.works__web-link(href= site.href, target="_blank", rel="nofollow noopener noreferrer")
+                  +img("content", site.img, "jpg", 400, 400, site.alt)

@@ -1,0 +1,16 @@
+mixin footer(footerMods)
+  footer.footer(class=footerMods)
+    .container
+      .footer__wrapper
+        ul.footer__social-list
+          li.footer__social-item
+            a.footer__social-link.footer__social-link--hh(href="https://spb.hh.ru/applicant/resumes/view?resume=48649c8cff09b9bd9f0039ed1f75725458666c", target="_blank", rel="nofollow noopener noreferrer")
+              +icon("icon-hh", 40, 40)
+          li.footer__social-item
+            a.footer__social-link.footer__social-link--vk(href="https://vk.com/garmonica", target="_blank", rel="nofollow noopener noreferrer")
+              +icon("icon-vk", 40, 40)
+          li.footer__social-item
+            a.footer__social-link.footer__social-link--telega(href="https://t.me/Oliera", target="_blank", rel="nofollow noopener noreferrer")
+              +icon("icon-telegram-footer", 40, 40)
+        p.footer__copyright &copy;
+          span  Olga Petrova, 2022

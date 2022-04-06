@@ -1,0 +1,23 @@
+extends ../components/base/layout
+
+block variables
+  - const title = "Ольга Петрова - резюме" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentUrl = "index.html" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    h1.visually-hidden Петрова Ольга Александровна - Моё резюме
+    //- на странице запрещен "голый" код
+    //- все блоки вставляются из папки pug/components/blocks
+    +intro()
+    +experience()
+    +works()
+    +qa()
+    +education()
+
+block modals

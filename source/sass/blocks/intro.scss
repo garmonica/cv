@@ -1,0 +1,174 @@
+.intro {
+  padding: 60px 0;
+
+  @include vp-1023 {
+    padding: 20px 0;
+  }
+
+  &__wrapper {
+    display: flex;
+
+    @include vp-1023 {
+      display: block;
+    }
+  }
+
+  &__heading {
+    color: $color-indigo;
+  }
+
+  &__photo {
+    flex-shrink: 0;
+    position: relative;
+    width: 240px;
+    height: 200px;
+    margin-left: -20px;
+    margin-right: 100px;
+
+    @include vp-1279 {
+      margin-right: 70px;
+    }
+
+    @include vp-1023 {
+      margin: 0 auto 28px;
+    }
+
+    img {
+      margin-left: 20px;
+      border-radius: 50%;
+      transform: rotate(-6deg);
+    }
+
+    p {
+      width: 240px;
+      position: absolute;
+      bottom: -10px;
+      left: 10px;
+      right: 0;
+      margin: 0 auto;
+
+      padding: 10px;
+
+      text-align: center;
+      font-family: $ff-roboto;
+      font-size: 30px;
+      font-weight: 700;
+      background-color: $color-default-white;
+
+      box-shadow: -2px 4px 6px rgba($color-default-black, 0.3);
+      transform: rotate(-7deg);
+    }
+  }
+
+  &__content {
+    margin-bottom: 30px;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-size: 18px;
+    line-height: 118%;
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+
+    margin-bottom: 14px;
+
+    @include vp-767 {
+      flex-direction: column;
+    }
+
+    svg {
+      position: relative;
+      top: 2px;
+    }
+
+    svg:first-child {
+      margin-left: 7px;
+      vertical-align: top;
+    }
+
+    span {
+      line-height: 140%;
+    }
+
+    span:first-child {
+      position: relative;
+      margin-right: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: $color-indigo;
+      flex-shrink: 0;
+      min-width: 130px;
+
+      span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        width: calc(100% - 3px);
+        bottom: 3px;
+        height: 1px;
+        background-color: $color-indigo;
+      }
+    }
+
+    span:nth-child(2) {
+      @include vp-767 {
+        font-size: 16px;
+      }
+    }
+  }
+
+  &__text {
+    margin: 0;
+    padding: 10px 0;
+
+    text-indent: 28px;
+    font-size: 18px;
+    line-height: 160%;
+    text-align: justify;
+
+    @include vp-767 {
+      font-size: 16px;
+      text-indent: 0;
+    }
+
+    ul {
+      margin: 0;
+      margin-left: 28px;
+      padding: 0;
+      list-style: "—  ";
+      text-indent: 0;
+    }
+  }
+
+  &__cv {
+    font-style: italic;
+    font-weight: 700;
+    transition: color $trans-default;
+    color: $color-indigo;
+
+    svg {
+      position: relative;
+      top: 3px;
+      margin-right: 6px;
+    }
+
+    svg .arrow {
+      transition: transform $trans-default;
+    }
+
+    &:hover {
+      color: $color-violet;
+
+      svg .arrow {
+        transform: translateY(3px);
+      }
+    }
+  }
+}
