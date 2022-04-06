@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>UI-kit</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Добро пожаловать! Меня зовут Ольга и я ищу работу!">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest" crossorigin="use-credentials">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preload" href="fonts/nunito-light.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-regular.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-semibold.woff2" as="font" crossorigin="anonymous">
+    <link rel="preload" href="fonts/nunito-bold.woff2" as="font" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.min.css">
+  </head>
+  <body>
+    <div class="visually-hidden"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol id="icon-close" viewBox="0 0 20 20"><path d="M.293 18.291a1 1 0 101.414 1.414L10 11.413l8.292 8.292a1 1 0 101.414-1.414l-8.292-8.292 8.292-8.292A1 1 0 1018.291.293L9.999 8.585 1.707.293A1 1 0 10.293 1.707L8.585 10 .293 18.291z"/></symbol><symbol id="icon-down" viewBox="0 0 12 10">
+<path d="M4.55644 9.23077C5.19802 10.2564 6.80198 10.2564 7.44356 9.23077L11.7742 2.30769C12.4158 1.28205 11.6138 0 10.3307 0L1.66935 0C0.386192 0 -0.415771 1.28205 0.225806 2.30769L4.55644 9.23077Z" fill="currentColor"/>
+</symbol><symbol id="icon-download" viewBox="0 0 20 20">
+<path d="M17.2234 12.746V17.3147H2.77665V12.746H0V18.6576C0 19.3989 0.620711 20 1.39039 20H18.6096C19.3786 20 20 19.3995 20 18.6576V12.746H17.2234Z" fill="#17141B"/>
+<path d="M9.74598 12.293L5.77067 7.64628C5.77067 7.64628 5.16582 7.09387 5.82171 7.09387C6.47759 7.09387 8.06179 7.09387 8.06179 7.09387C8.06179 7.09387 8.06179 6.72227 8.06179 6.14918C8.06179 4.51531 8.06179 1.5418 8.06179 0.329575C8.06179 0.329575 7.97282 0 8.48594 0C9.0032 0 11.2688 0 11.6391 0C12.0088 0 12.0005 0.277537 12.0005 0.277537C12.0005 1.45307 12.0005 4.52932 12.0005 6.10982C12.0005 6.62219 12.0005 6.95444 12.0005 6.95444C12.0005 6.95444 13.2709 6.95444 14.0682 6.95444C14.8641 6.95444 14.2648 7.53286 14.2648 7.53286C14.2648 7.53286 10.8826 11.876 10.4108 12.3317C10.0715 12.662 9.74598 12.293 9.74598 12.293Z" fill="#17141B"/>
+</symbol><symbol id="icon-hh" viewBox="0 0 40 40">
+<path d="M20 40C30.9333 40 40 31.2 40 20C40 9.06667 31.2 0 20 0C9.06667 0 0 8.8 0 20C0 30.9333 8.8 40 20 40Z" fill="#DB0924"/>
+<path d="M11.1999 10.9334V17.6001C12.2666 16.2667 13.5999 15.7334 14.9333 15.7334C15.7333 15.7334 16.2666 16.0001 16.7999 16.2667C17.3333 16.5334 17.8666 16.8001 18.1333 17.3334C18.3999 17.8667 18.6666 18.1334 18.6666 18.6667C18.6666 19.2001 18.9333 20.0001 18.9333 21.0667V28.2667H15.7333V21.8667C15.7333 20.5334 15.7333 19.7334 15.4666 19.4667C15.4666 19.2001 15.1999 18.9334 14.9333 18.6667C14.6666 18.4001 14.1333 18.4001 13.8666 18.4001C13.3333 18.4001 12.7999 18.6667 12.5333 18.6667C11.9999 18.9334 11.7333 19.2001 11.7333 19.7334C11.4666 20.2667 11.4666 21.0667 11.4666 22.1334V28.2667H8.2666V10.6667H11.4666L11.1999 10.9334Z" fill="#EBFFFF"/>
+<path d="M23.7331 10.9334V17.6001C24.7998 16.2667 26.1331 15.7334 27.4665 15.7334C28.2665 15.7334 28.7998 16.0001 29.3331 16.2667C29.8665 16.5334 30.3998 16.8001 30.6665 17.3334C30.9331 17.8667 31.1998 18.1334 31.1998 18.6667C31.1998 19.2001 31.4665 20.0001 31.4665 21.0667V28.2667H28.2665V21.8667C28.2665 20.5334 28.2665 19.7334 27.9998 19.4667C27.9998 19.2001 27.7331 18.9334 27.4665 18.6667C27.1998 18.4001 26.6665 18.4001 26.3998 18.4001C25.8665 18.4001 25.3331 18.6667 25.0665 18.6667C24.5331 18.9334 24.2665 19.2001 24.2665 19.7334C23.9998 20.2667 23.9998 21.0667 23.9998 22.1334V28.2667H20.7998V10.6667H23.9998L23.7331 10.9334Z" fill="#EBFFFF"/>
+</symbol><symbol id="icon-telegram-footer" viewBox="0 0 40 40">
+<path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95432 31.0457 0 20 0C8.95432 0 0 8.95432 0 20C0 31.0457 8.95432 40 20 40Z" fill="#34AADF"/>
+<path d="M6.88615 19.9575C6.88615 19.9575 18.0905 15.2744 21.9763 13.6254C23.466 12.9658 28.5176 10.8551 28.5176 10.8551C28.5176 10.8551 30.8492 9.93169 30.6548 12.1743C30.59 13.0977 30.0719 16.3297 29.5539 19.8256C28.7766 24.7725 27.9347 30.1812 27.9347 30.1812C27.9347 30.1812 27.8052 31.6983 26.7042 31.9621C25.6032 32.2259 23.7897 31.0387 23.466 30.7748C23.2068 30.577 18.6086 27.6088 16.9247 26.1576C16.4713 25.7619 15.9532 24.9704 16.9894 24.047C19.321 21.8703 22.1058 19.166 23.7897 17.4511C24.5669 16.6595 25.3441 14.8127 22.1058 17.0552C17.5076 20.2873 12.974 23.3214 12.974 23.3214C12.974 23.3214 11.9378 23.981 9.99486 23.3873C8.05185 22.7938 5.78508 22.0022 5.78508 22.0022C5.78508 22.0022 4.23081 21.0128 6.88615 19.9575V19.9575Z" fill="white"/>
+</symbol><symbol id="icon-telegram" viewBox="0 0 20 20">
+<path d="M18.3037 2.14596C15.6653 3.23873 4.35197 7.92484 1.22611 9.20203C-0.870234 10.0201 0.356993 10.7872 0.356993 10.7872C0.356993 10.7872 2.14648 11.4007 3.68056 11.8608C5.21443 12.321 6.03251 11.8098 6.03251 11.8098L13.2419 6.95237C15.7984 5.21392 15.1849 6.64551 14.5712 7.25923C13.2419 8.58874 11.0433 10.6849 9.20254 12.3723C8.38447 13.0881 8.7934 13.7016 9.15151 14.0084C10.4808 15.1334 14.1112 17.4343 14.3156 17.5876C15.3957 18.3523 17.5204 19.453 17.8435 17.1274L19.1218 9.09996C19.5309 6.39011 19.9399 3.88462 19.9909 3.16883C20.1444 1.43017 18.3037 2.14596 18.3037 2.14596Z" fill="#1B92D1"/>
+</symbol><symbol id="icon-triangle" viewBox="0 0 7 8">
+<path d="M6.5 4.86603C7.16667 4.48113 7.16667 3.51887 6.5 3.13397L2 0.535898C1.33333 0.150998 0.5 0.632123 0.5 1.40192L0.5 6.59808C0.5 7.36788 1.33333 7.849 2 7.4641L6.5 4.86603Z" fill="currentColor"/>
+</symbol><symbol id="icon-vk" viewBox="0 0 40 40">
+<path d="M20 40C31.0457 40 40 31.0457 40 20C40 8.95432 31.0457 0 20 0C8.95432 0 0 8.95432 0 20C0 31.0457 8.95432 40 20 40Z" fill="#5181B8"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M32.0926 15.095C32.2709 14.5006 32.0926 14.0845 31.2604 14.0845H28.4863C27.773 14.0845 27.456 14.461 27.2776 14.8771C27.2776 14.8771 25.8708 18.3248 23.8695 20.5441C23.2156 21.198 22.9382 21.3961 22.5816 21.3961C22.4032 21.3961 22.1456 21.198 22.1456 20.6035V15.095C22.1456 14.3817 21.9475 14.0845 21.353 14.0845H16.9938C16.5579 14.0845 16.2805 14.4213 16.2805 14.7185C16.2805 15.3922 17.2712 15.5508 17.3901 17.4134V21.4952C17.3901 22.3869 17.2316 22.5454 16.8749 22.5454C15.9436 22.5454 13.6451 19.0976 12.2977 15.1347C12.0203 14.4015 11.7627 14.0845 11.0494 14.0845H8.27533C7.48274 14.0845 7.32422 14.461 7.32422 14.8771C7.32422 15.6102 8.25551 19.2561 11.7033 24.0711C14.0018 27.3604 17.2316 29.1437 20.1642 29.1437C21.9277 29.1437 22.1456 28.7474 22.1456 28.0737V25.577C22.1456 24.7845 22.3041 24.6259 22.8788 24.6259C23.2949 24.6259 23.9884 24.8241 25.633 26.4093C27.5154 28.2917 27.8325 29.1437 28.8826 29.1437H31.6567C32.4493 29.1437 32.8456 28.7474 32.6078 27.9746C32.3502 27.2019 31.4585 26.0724 30.2697 24.725C29.6158 23.9522 28.6449 23.1398 28.3674 22.7237C27.9513 22.1887 28.0702 21.9509 28.3674 21.4952C28.3674 21.4754 31.7558 16.7198 32.0926 15.095V15.095Z" fill="white"/>
+</symbol><symbol id="icon-whatsapp" viewBox="0 0 20 20">
+<path d="M9.43422 0.0115662C4.15224 0.263064 -0.0159775 4.66193 4.6043e-05 9.94989C0.00492485 11.5605 0.393747 13.0806 1.07965 14.4238L0.0265447 19.5357C-0.0304226 19.8122 0.21897 20.0544 0.493666 19.9893L5.50272 18.8026C6.78962 19.4436 8.23509 19.8139 9.76488 19.8372C15.1636 19.9197 19.6651 15.633 19.8334 10.2363C20.0138 4.45142 15.2393 -0.264899 9.43422 0.0115662ZM15.4111 15.4111C13.9442 16.8781 11.9937 17.686 9.91918 17.686C8.70446 17.686 7.54148 17.4134 6.46246 16.8759L5.76488 16.5284L2.69382 17.256L3.34026 14.118L2.99659 13.445C2.43644 12.348 2.15241 11.1617 2.15241 9.91918C2.15241 7.84459 2.96029 5.89421 4.42723 4.42722C5.88106 2.97338 7.86329 2.15236 9.91933 2.15236C11.9939 2.15241 13.9442 2.96028 15.4111 4.42717C16.8781 5.89411 17.686 7.84449 17.686 9.91903C17.686 11.9751 16.8649 13.9573 15.4111 15.4111Z" fill="#7AD06D"/>
+<path d="M14.7331 12.0703L12.8118 11.5186C12.5592 11.4461 12.2872 11.5178 12.1031 11.7053L11.6333 12.184C11.4351 12.3859 11.1345 12.4507 10.8723 12.3446C9.96342 11.9768 8.0515 10.2769 7.56324 9.4266C7.42238 9.18132 7.44567 8.87467 7.61863 8.65087L8.02883 8.12018C8.18955 7.91225 8.22346 7.63301 8.11718 7.39266L7.30883 5.5644C7.1152 5.1265 6.55562 4.99903 6.19005 5.30821C5.65381 5.76175 5.01756 6.45095 4.94021 7.21449C4.80385 8.56066 5.38117 10.2576 7.56434 12.2952C10.0865 14.6493 12.1062 14.9603 13.4213 14.6417C14.1671 14.461 14.7632 13.7368 15.1394 13.1438C15.3959 12.7394 15.1934 12.2025 14.7331 12.0703Z" fill="#7AD06D"/>
+</symbol></svg>
+    </div>
+    <div class="wrapper">
+      <style>
+        main {
+          margin-top: 100px;
+        }
+        
+        main > .container {
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+        
+        .components-backwards {
+          color: #ffffff;
+          display: inline-block;
+        }
+        
+        .components-backwards span:first-child {
+          position: relative;
+          top: -3px;
+        
+          display: inline-block;
+          margin-right: 15px;
+        
+          font-size: 16px;
+          line-height: 24px;
+          vertical-align: top;
+        
+          transform: scale(2);
+        }
+        
+        .components-backwards span:last-child {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        
+        .components-backwards + h1 {
+          margin-bottom: 0;
+        }
+        
+        .container > section {
+          padding: 70px 0 0 0;
+        }
+        
+        section > h2 {
+          margin: 0 0 20px 0;
+          padding: 20px 0;
+          position: relative;
+          color: #ffffff;
+        }
+        
+        section > h2::before {
+          content: "";
+          position: absolute;
+          height: 100%;
+          width: 100vw;
+          left: 50%;
+          top: 0;
+          transform: translateX(-50%);
+          background-color: #2c39f2;
+          z-index: -1;
+        }
+        
+        .header-ui {
+          background-color: #2c39f2;
+          padding: 20px 0;
+          position: fixed;
+          width: 100vw;
+          z-index: 99;
+          box-shadow: 0 0 3px 1px #000000;
+        }
+        
+        .header-ui__nav {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          gap: 20px 80px;
+        }
+        
+        .header-ui__inner-list {
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px 30px;
+        }
+        
+        .header-ui__inner-link {
+          color: #ffffff;
+          transition: color 0.3s ease;
+        }
+        
+        .header-ui__inner-link:hover,
+        .header-ui__inner-link.is-active {
+          color: #ff1553;
+        }
+        
+        .header-ui__inner-link.is-inactive {
+          color: #ffffff;
+          pointer-events: none;
+        }
+        
+      </style>
+      <header class="header-ui">
+        <nav class="header-ui__nav container"><a class="components-backwards" href="sitemap.html"><span>&larr;</span><span>вернуться на разводящую</span></a>
+          <ul class="header-ui__inner-list">
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#modals" data-navigation-link>Modals</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#buttons" data-navigation-link>Buttons</a></li>
+            <li class="header-ui__inner-item"><a class="header-ui__inner-link" href="#form-elements" data-navigation-link>Form elements</a></li>
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+          <h1>UI-kit</h1>
+          <section id="modals">
+            <h2>Modals</h2>
+            <p>
+              <button class="btn" type="button" data-open-modal="feedback">modal-feedback</button>
+            </p>
+            <p>
+              <button class="btn" type="button" data-open-modal="success">modal-success</button>
+            </p>
+          </section>
+          <section id="buttons">
+            <h2>Buttons</h2>
+            <a class="btn" href="#">Текст</a>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Текст", href: "#"})</pre></code>
+            <a class="btn btn--red" href="#" target="_blank" rel="nofollow noopener noreferrer" aria-label="Просто ссылка">Текст</a>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Я красная ссылка", href: "#", isExternal: true})(aria-label="Просто ссылка").btn--red</pre></code>
+            <button class="btn" type="button" disabled>Текст</button>
+            <p>Пример вызова</p><code>
+              <pre>+btn({text: "Текст"})(disabled)</pre></code>
+          </section>
+          <section id="form-elements">
+            <h2>Form elements</h2>
+            <div data-validate>
+              <form method="post">
+                <div class="custom-input" data-validate-type="text" data-limitations="name">
+                  <label><span class="custom-input__label">Введите ваше имя</span>
+                    <input type="text" name="user-name" minlength="2">
+                  </label>
+                  <div class="custom-input__error">Не корректное имя</div>
+                </div>
+                <p>Пример вызова</p><code>
+                  <pre>+custom-input({inputLabel: "Введите ваше имя", inputError: "Не корректное имя", inputName: "user-name", inputMinLength: "2"})(data-validate-type="text", data-limitations="letters")</pre></code>
+                <div class="custom-input" data-validate-type="phone">
+                  <label><span class="custom-input__label">Введите ваш телефон</span>
+                    <input type="tel" name="user-phone">
+                  </label>
+                  <div class="custom-input__error">Не корректный телефон</div>
+                </div>
+                <p>Пример вызова</p><code>
+                  <pre>+custom-input({inputLabel: "Введите ваш телефон", inputError: "Не корректный телефон", inputName: "user-phone"})(data-validate-type="phone")</pre></code>
+                <div class="custom-input" data-validate-type="email">
+                  <label><span class="custom-input__label">Введите ваш email</span>
+                    <input type="email" name="user-email">
+                  </label>
+                  <div class="custom-input__error">Не корректный email</div>
+                </div>
+                <p>Пример вызова</p><code>
+                  <pre>+custom-input({inputLabel: "Введите ваш email", inputError: "Не корректный email", inputName: "user-email"})(data-validate-type="email")</pre></code>
+                <div class="custom-textarea">
+                  <label><span class="custom-textarea__label">Расскажите о себе</span>
+                    <textarea name="user-info"></textarea>
+                  </label>
+                </div>
+                <p>Пример вызова</p><code>
+                  <pre>+custom-textarea({inputLabel: "Расскажите о себе", inputName: "user-info"})</pre></code>
+                <div class="custom-select" data-select data-validate-type="select" data-name="some-name" data-id="id-example"><span class="custom-select__error">Выберите тему обращения</span>
+                  <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                  <ul class="custom-select__list" role="listbox">
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-1" aria-selected="true" role="option">Тема 1</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-2" aria-selected="false" role="option">Тема 2</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-3" aria-selected="false" role="option">Тема 3</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-4" aria-selected="false" role="option">Тема 4</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-5" aria-selected="false" role="option">Тема 5</li>
+                    <li class="custom-select__item" tabindex="0" data-select-value="id-6" aria-selected="false" role="option">Тема 6</li>
+                  </ul>
+                </div><code>
+                  <pre></pre>+custom-select({error: "Выберите тему обращения", optionsList: [{text: "Тема 1", value: "id-1"}, {text:
+                  "Тема 2", value: "id-2"}, {text: "Тема 3", value: "id-3"}, {text: "Тема 4", value: "id-4"}, {text: "Тема 5",
+                  value: "id-5"}, {text: "Тема 6", value: "id-6"}]})(data-select, data-validate-type="select", data-name="some-name",
+                  data-id="id-example").custom-select</code>
+                <div class="custom-toggle custom-toggle--checkbox" data-validate-type="checkbox">
+                  <label>
+                    <input type="checkbox" name="user-agreement" checked><span class="custom-toggle__icon"></span><span class="custom-toggle__label">Подтвердите своё согласие</span>
+                  </label>
+                  <div class="custom-toggle__error">Согласие является обязательным</div>
+                </div>
+                <p>Пример вызова</p><code>
+                  <pre>+custom-toggle({inputLabel: "Подтвердите своё согласие", inputError: "Согласие является обязательным", inputName: "user-agreement", inputChecked: true})(data-validate-type="checkbox").custom-toggle--checkbox</pre></code>
+                <button class="btn" type="reset">Сбросить форму</button>
+                <button class="btn" type="submit">Отправить форму</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </main>
+      <script>const MoveTo = (() => {
+  /**
+  * Defaults
+  * @type {object}
+  */
+  const defaults = {
+    tolerance: 0,
+    duration: 800,
+    easing: 'easeOutQuart',
+    container: window,
+    callback() {},
+  };
+
+  /**
+  * easeOutQuart Easing Function
+  * @param  {number} t - current time
+  * @param  {number} b - start value
+  * @param  {number} c - change in value
+  * @param  {number} d - duration
+  * @return {number} - calculated value
+  */
+  function easeOutQuart(t, b, c, d) {
+    t /= d;
+    t--;
+    return -c * (t * t * t * t - 1) + b;
+  }
+
+  /**
+  * Merge two object
+  *
+  * @param  {object} obj1
+  * @param  {object} obj2
+  * @return {object} merged object
+  */
+  function mergeObject(obj1, obj2) {
+    const obj3 = {};
+    Object.keys(obj1).forEach((propertyName) => {
+      obj3[propertyName] = obj1[propertyName];
+    });
+
+    Object.keys(obj2).forEach((propertyName) => {
+      obj3[propertyName] = obj2[propertyName];
+    });
+    return obj3;
+  }
+
+  /**
+  * Converts camel case to kebab case
+  * @param  {string} val the value to be converted
+  * @return {string} the converted value
+  */
+  function kebabCase(val) {
+    return val.replace(/([A-Z])/g, function ($1) {
+      return '-' + $1.toLowerCase();
+    });
+  }
+
+  /**
+  * Count a number of item scrolled top
+  * @param  {Window|HTMLElement} container
+  * @return {number}
+  */
+  function countScrollTop(container) {
+    if (container instanceof HTMLElement) {
+      return container.scrollTop;
+    }
+    return container.pageYOffset;
+  }
+
+  /**
+  * MoveTo Constructor
+  * @param {object} options Options
+  * @param {object} easeFunctions Custom ease functions
+  */
+  // eslint-disable-next-line no-shadow
+  function MoveTo(options = {}, easeFunctions = {}) {
+    this.options = mergeObject(defaults, options);
+    this.easeFunctions = mergeObject({easeOutQuart}, easeFunctions);
+  }
+
+  /**
+  * Register a dom element as trigger
+  * @param  {HTMLElement} dom Dom trigger element
+  * @param  {function} callback Callback function
+  * @return {function|void} unregister function
+  */
+  MoveTo.prototype.registerTrigger = function (dom, callback) {
+    if (!dom) {
+      return;
+    }
+
+    const href = dom.getAttribute('href') || dom.getAttribute('data-target');
+    // The element to be scrolled
+    const target = (href && href !== '#')
+      ? document.getElementById(href.substring(1))
+      : document.body;
+    const options = mergeObject(this.options, _getOptionsFromTriggerDom(dom, this.options));
+
+    if (typeof callback === 'function') {
+      options.callback = callback;
+    }
+
+    const listener = (e) => {
+      e.preventDefault();
+      this.move(target, options);
+    };
+
+    dom.addEventListener('click', listener, false);
+
+    // eslint-disable-next-line consistent-return
+    return () => dom.removeEventListener('click', listener, false);
+  };
+
+  /**
+  * Move
+  * Scrolls to given element by using easeOutQuart function
+  * @param  {HTMLElement|number} target Target element to be scrolled or target position
+  * @param  {object} options Custom options
+  */
+  MoveTo.prototype.move = function (target, options = {}) {
+    if (target !== 0 && !target) {
+      return;
+    }
+
+    options = mergeObject(this.options, options);
+
+    let distance = typeof target === 'number' ? target : target.getBoundingClientRect().top;
+    const from = countScrollTop(options.container);
+    let startTime = null;
+    let lastYOffset;
+    distance -= options.tolerance;
+
+    // rAF loop
+    /* eslint-disable-next-line */
+    const loop = (currentTime) => {
+      const currentYOffset = countScrollTop(this.options.container);
+
+      if (!startTime) {
+        // To starts time from 1, we subtracted 1 from current time
+        // If time starts from 1 The first loop will not do anything,
+        // because easing value will be zero
+        startTime = currentTime - 1;
+      }
+
+      const timeElapsed = currentTime - startTime;
+
+      if (lastYOffset) {
+        if (
+          (distance > 0 && lastYOffset > currentYOffset) ||
+          (distance < 0 && lastYOffset < currentYOffset)
+        ) {
+          return options.callback(target);
+        }
+      }
+      lastYOffset = currentYOffset;
+
+      const val = this.easeFunctions[options.easing](timeElapsed, from, distance, options.duration);
+
+      options.container.scroll(0, val);
+
+      if (timeElapsed < options.duration) {
+        window.requestAnimationFrame(loop);
+      } else {
+        options.container.scroll(0, distance + from);
+        options.callback(target);
+      }
+    };
+
+    window.requestAnimationFrame(loop);
+  };
+
+  /**
+  * Adds custom ease function
+  * @param {string}   name Ease function name
+  * @param {function} fn   Ease function
+  */
+  MoveTo.prototype.addEaseFunction = function (name, fn) {
+    this.easeFunctions[name] = fn;
+  };
+
+  /**
+  * Returns options which created from trigger dom element
+  * @param  {HTMLElement} dom Trigger dom element
+  * @param  {object} options The instance's options
+  * @return {object} The options which created from trigger dom element
+  */
+  function _getOptionsFromTriggerDom(dom, options) {
+    const domOptions = {};
+
+    Object.keys(options).forEach((key) => {
+      const value = dom.getAttribute(`data-mt-${kebabCase(key)}`);
+      if (value) {
+        domOptions[key] = isNaN(value) ? value : parseInt(value, 10);
+      }
+    });
+    return domOptions;
+  }
+
+  return MoveTo;
+})();
+window.MoveTo = MoveTo;
+
+class NavigationChanger {
+  constructor() {
+    this._scrollDuration = 1000;
+    this._currentIndex = 0;
+    this._newCurrentIndex = null;
+    this._blockShift = 50;
+    this._linkElements = document.querySelectorAll('[data-navigation-link]');
+
+    this._moveTo = new window.MoveTo({
+      duration: this._scrollDuration,
+      easing: 'easeOutQuart',
+    });
+
+    this._documentScrollHandler = this._documentScrollHandler.bind(this);
+  }
+
+  init() {
+    if (!this._linkElements.length) {
+      return;
+    }
+    this._initMoveTo();
+    this._changeLinksActiveState();
+    document.addEventListener('scroll', this._documentScrollHandler);
+  }
+
+  _documentScrollHandler() {
+    this._changeLinksActiveState();
+  }
+
+  _changeLinksActiveState() {
+    this._linkElements.forEach((link, index) => {
+      const currentBlockElement = document.querySelector(`${link.getAttribute('href')}`);
+      if (!currentBlockElement) {
+        // eslint-disable-next-line no-console
+        console.error('Блока на который ссылается ссылка не существует! Проверьте соответствие href ссылок с id блоков');
+        return;
+      }
+      if (currentBlockElement.getBoundingClientRect().bottom > this._blockShift && currentBlockElement.getBoundingClientRect().top <= this._blockShift) {
+        link.classList.add('is-active');
+      } else {
+        link.classList.remove('is-active');
+      }
+
+      if (document.body.getBoundingClientRect().bottom - window.innerHeight < this._blockShift && currentBlockElement.getBoundingClientRect().top > this._blockShift) {
+        this._linkElements[index - 1].classList.remove('is-active');
+        link.classList.add('is-active');
+      }
+    });
+  }
+
+  _removeLinkAnimation() {
+    this._linkElements.forEach((link, index) => {
+      if (index !== this._currentIndex && index !== this._newCurrentIndex) {
+        link.classList.add('is-inactive');
+      }
+    });
+  }
+
+  _addLinkAnimation() {
+    this._linkElements.forEach((link) => link.classList.remove('is-inactive'));
+    this._currentIndex = this._newCurrentIndex;
+  }
+
+  _initMoveTo() {
+    this._linkElements.forEach((link, index) => {
+      link.addEventListener('click', (evt) => {
+        evt.preventDefault();
+        const target = document.querySelector(`${link.getAttribute('href')}`);
+        if (!target) {
+          // eslint-disable-next-line no-console
+          console.error('Блока на который ссылается ссылка не существует! Проверьте соответствие href ссылок с id блоков');
+          return;
+        }
+        this._newCurrentIndex = index;
+        this._moveTo.move(target);
+        this._removeLinkAnimation();
+        setTimeout(() => {
+          this._addLinkAnimation();
+        }, this._scrollDuration);
+      });
+    });
+  }
+}
+
+const navigationChanger = new NavigationChanger();
+
+navigationChanger.init();
+
+      </script>
+    </div>
+    <div class="modal modal--preload modal--feedback" data-modal="feedback">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <p class="modal__description">Обычная модалка</p>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal--preload modal--success modal--no-scale modal--fit-content" data-modal="success">
+      <div class="modal__wrapper">
+        <div class="modal__overlay" data-close-modal></div>
+        <div class="modal__content">
+          <p class="modal__description">Размер этой модалки зависит от ширины контента,<br>отключена анимация-скейл</p>
+          <button class="modal__close-btn" type="button" aria-label="Закрыть попап" data-close-modal>
+            <svg width="15" height="15" aria-hidden="true">
+              <use xlink:href="#icon-close"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="js/vendor.min.js"></script>
+    <script src="js/main.min.js"></script>
+  </body>
+</html>
