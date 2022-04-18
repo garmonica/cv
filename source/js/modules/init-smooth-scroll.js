@@ -12,7 +12,7 @@ const initSmoothScroll = () => {
       const id = link.getAttribute('href').slice(1);
       const headerHeight = header.clientHeight;
       const yOffset = -(headerHeight + 6);
-      console.log(yOffset);
+      // console.log(yOffset);
 
       const block = document.getElementById(id);
       const y = block.getBoundingClientRect().top + window.pageYOffset + yOffset;
