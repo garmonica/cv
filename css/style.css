@@ -2460,6 +2460,8 @@ button,
   -webkit-transform: rotate(-6deg);
   -ms-transform: rotate(-6deg);
   transform: rotate(-6deg);
+  -webkit-box-shadow: 0 0 0 6px #edd83f;
+  box-shadow: 0 0 0 6px #edd83f;
 }
 
 .intro__photo p {
@@ -2556,6 +2558,18 @@ button,
   text-indent: 0;
 }
 
+.intro__text a {
+  font-weight: 700;
+  color: #4f3082;
+  -webkit-transition: color 0.4s ease;
+  -o-transition: color 0.4s ease;
+  transition: color 0.4s ease;
+}
+
+.intro__text a:hover {
+  color: #7243bf;
+}
+
 .intro__cv {
   font-style: italic;
   font-weight: 700;
@@ -2620,6 +2634,8 @@ button,
   margin-left: 10px;
   border-radius: 0 8px 8px 0;
   background: rgba(249, 249, 249, 0.3);
+  -webkit-box-shadow: 1px 1px 12px -5px rgba(23, 20, 27, 0.1);
+  box-shadow: 1px 1px 12px -5px rgba(23, 20, 27, 0.1);
 }
 
 .experience__item:nth-child(even) {
